@@ -75,7 +75,7 @@ header h1 {
     padding: 20px;
     box-sizing: border-box;
     gap: 20px; /* Add space between left and right containers */
-    background-image: url('Image/education.jpg'); /* Correct path to your background image */
+    background-image: url('education.jpg'); /* Correct path to your background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-size: cover; /* Scales the image to cover the entire container */
     background-position: center center; /* Centers the image */
