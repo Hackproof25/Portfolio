@@ -1,0 +1,232 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00FF00; /* Neon green */
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-bottom: 2px solid #00FF00;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Content section with background video */
+.content {
+    flex: 1; /* Allows content to take up available space */
+    padding-bottom: 50px; /* Ensure content does not overlap with footer */
+    position: relative; /* Position relative for layering */
+    overflow: hidden; /* Hide overflow to ensure video doesn’t spill out */
+    color: #00FF00; /* Ensures text color is readable */
+    display: flex; /* Flexbox for layout */
+}
+
+/* Video styling */
+#background-video {
+    position: absolute; /* Position absolute for full coverage */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the area without distortion */
+    z-index: -1; /* Sends video behind content */
+}
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Black background */
+    color: #00FF00; /* Neon green text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Make sure it covers everything else */
+}
+
+.loader {
+    border: 16px solid #000; /* Black border */
+    border-top: 16px solid #00FF00; /* Neon green top border */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 20px; /* Space between spinner and text */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide loading screen when page is loaded */
+.loaded #loading-screen {
+    display: none;
+}
+
+
+/* Container layout */
+.container-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Full width of the content area */
+    position: relative; /* Relative positioning for absolute child elements */
+    z-index: 1; /* Ensures containers are above the video */
+}
+
+.container {
+    border: 1px solid #00FF00; /* Green border */
+    padding: 15px;
+    margin: 10px;
+    color: #00FF00;
+    background: rgba(0, 0, 0, 0.92); /* Semi-transparent black background */
+}
+
+/* Left containers */
+.left-container {
+    flex: 1; /* Equal flex for both left containers */
+}
+
+/* Tech and soft skills content */
+h3 {
+    color: white; /* White text color for subheadings */
+    margin: 15px 10px; /* Minimal space above and below each subheading */
+    margin-left: 0; /* Add space on the left side */
+    font-size: 18px; /* Adjust the font size if needed */
+}
+
+/* Right container */
+.right-container {
+    flex: 2; /* Twice the size of the left containers */
+}
+
+/* Advanced terminal styles */
+.terminal {
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e; /* Darker background for a more realistic look */
+    color: #00FF00; /* Neon green text */
+    border: 2px solid #00FF00; /* Neon green border */
+    border-radius: 5px; /* Rounded corners for a more polished look */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 0; /* Space from the top */
+    padding: 10px; /* Padding inside the terminal */
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+    overflow: hidden; /* Prevent overflow from affecting the layout */
+}
+
+/* Terminal header styles */
+.terminal-header {
+    background-color: #333; /* Darker header background */
+    color: #00FF00; /* Neon green text */
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: #00FF00; /* Neon green button color */
+}
+
+.terminal-btn.close {
+    background-color: #ff5f56;
+}
+
+.terminal-btn.minimize {
+    background-color: #ffbd2e;
+}
+
+.terminal-btn.maximize {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    font-size: 14px;
+}
+
+/* Terminal body styles */
+.terminal-body {
+    padding: 10px;
+    color: #00FF00; /* Neon green text */
+    background-color: #1e1e1e; /* Dark background */
+    overflow-y: auto; /* Vertical scrollbar for overflow */
+    flex-grow: 1; /* Grow to fill available space */
+    box-sizing: border-box;
+    font-size: 14px; /* Font size for terminal text */
+    line-height: 1.4; /* Better line spacing */
+    border-top: 1px solid #00FF00; /* Separator line between header and body */
+    max-height: calc(100vh - 60px - 50px); /* Adjust based on header and footer height */
+}
+
+/* Terminal input field styles */
+.terminal-input {
+    background-color: #1e1e1e; /* Match background color */
+    color: #00FF00; /* Neon green text */
+    border: none; /* Remove border */
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+    font-size: 14px; /* Match terminal text size */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    outline: none; /* Remove default outline */
+}
+
+/* Footer styles */
+footer {
+    padding: 5px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-top: 2px solid #00FF00;
+    height: 40px;
+    position: fixed; /* Fixes the footer at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #00FF00;
+}
+/* Modern scrollbar styles for terminal */
+.terminal-body::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #1e1e1e; /* Dark background for the scrollbar track */
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #00FF00; /* Neon green color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #00CC00; /* Slightly darker green when hovered */
+}

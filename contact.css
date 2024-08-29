@@ -1,0 +1,237 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00FF00; /* Neon green */
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+
+/* Header styles */
+header {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-bottom: 2px solid #00FF00;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Header text */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #00FF00;
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Black background */
+    color: #00FF00; /* Neon green text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Make sure it covers everything else */
+}
+
+.loader {
+    border: 16px solid #000; /* Black border */
+    border-top: 16px solid #00FF00; /* Neon green top border */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 20px; /* Space between spinner and text */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide loading screen when page is loaded */
+.loaded #loading-screen {
+    display: none;
+}
+
+/* Main container to hold the terminal and side containers */
+.main-container {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px; /* Add space between left and right containers */
+    background-image: url("Image/contact.jpg"); /* Correct path to your background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire container */
+    background-position: center center; /* Centers the image */
+}
+
+
+/* Left side container */
+.left-container {
+    height: 550px; /* Auto height to fit content */
+    width: 62%; /* Adjusted width */
+    background-color: rgba(26,26,26,0.8);
+    border: 2px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the top */
+    color: #00FF00;
+    box-sizing: border-box;
+    padding: 10px; /* Padding inside the side containers */
+}
+
+/* Social media icons container */
+.social-media-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 icons per row */
+    column-gap: 0px; /* Horizontal space between icons in the same row */
+    row-gap: 80px; /* Vertical space between rows */
+    justify-items: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically */
+    width: 100%; /* Full width of the container */
+    margin-top: 100px; /* Space above the icons */
+}
+
+/* Social media icons */
+.social-media-icons a {
+    color: #00FF00; /* Neon green */
+    font-size: 100px; /* Increased size of the icons */
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect: Glow and scale */
+.social-media-icons a:hover {
+    color: #00FF00; /* Ensure the icon color remains neon green */
+    transform: scale(1.2); /* Slightly increase the size on hover */
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00; /* Add glowing effect */
+}
+
+
+/* Right side container */
+.right-container {
+    height: 550px; /* Auto height to fit content */
+    width: 37%; /* Adjusted width */
+    background-color: #1a1a1a;
+    border: 2px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the top */
+    color: #00FF00;
+    box-sizing: border-box;
+    padding: 10px; /* Padding inside the side containers */
+}
+
+/* Advanced terminal styles */
+.terminal {
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e; /* Darker background for a more realistic look */
+    color: #00FF00; /* Neon green text */
+    border: 2px solid #00FF00; /* Neon green border */
+    border-radius: 5px; /* Rounded corners for a more polished look */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-top: 0px; /* Space from the top */
+    padding: 10px; /* Padding inside the terminal */
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+}
+
+/* Terminal header styles */
+.terminal-header {
+    background-color: #333; /* Darker header background */
+    color: #00FF00; /* Neon green text */
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: #00FF00; /* Neon green button color */
+}
+
+.terminal-btn.close {
+    background-color: #ff5f56;
+}
+
+.terminal-btn.minimize {
+    background-color: #ffbd2e;
+}
+
+.terminal-btn.maximize {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    font-size: 14px;
+}
+
+/* Terminal body styles */
+.terminal-body {
+    padding: 10px;
+    color: #00FF00; /* Neon green text */
+    background-color: #1e1e1e; /* Dark background */
+    overflow-y: auto;
+    flex-grow: 1;
+    box-sizing: border-box;
+    font-size: 14px; /* Font size for terminal text */
+    line-height: 1.4; /* Better line spacing */
+    border-top: 1px solid #00FF00; /* Separator line between header and body */
+}
+
+/* Terminal input field styles */
+.terminal-input {
+    background-color: #1e1e1e; /* Match background color */
+    color: #00FF00; /* Neon green text */
+    border: none; /* Remove border */
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+    font-size: 14px; /* Match terminal text size */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    outline: none; /* Remove default outline */
+}
+
+
+/* Footer styles */
+footer {
+    padding: 5px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-top: 2px solid #00FF00;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Footer text */
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #00FF00;
+}

@@ -1,0 +1,257 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00FF00; /* Neon green */
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow:auto;
+}
+
+
+/* Matrix canvas */
+#matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it’s behind all other content */
+}
+
+/* Header styles with height 60px */
+header {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-bottom: 2px solid #00FF00;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #00FF00;
+}
+
+/* Main container to hold the terminal and side containers */
+.main-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Side containers */
+.side-container {
+    height: 100%;
+    width: 30%; /* Increased width of the side containers */
+    background-color: #1a1a1a;
+    border: 2px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the top */
+    color: #00FF00;
+    box-sizing: border-box;
+    padding: 10px; /* Padding inside the side containers */
+}
+
+
+/* Left and right container specific adjustments */
+.left {
+    margin-right: 20px;
+}
+
+.right {
+    margin-left: 20px;
+}
+
+/* Headings in side containers */
+.side-container h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #00FF00;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #00FF00; /* Green line separator */
+    background-color: #1a1a1a; /* Background color to match container */
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the element’s width */
+}
+
+.side-container {
+    text-align: center; /* Center all content inside the container */
+}
+
+.side-container h3 {
+    margin: 0 auto; /* Center the heading horizontally */
+    font-size: 18px;
+    color: #00FF00;
+    padding: 10px;
+    background-color: #1a1a1a; /* Background color to match container */
+    border-bottom: 2px solid #00FF00; /* Green line separator */
+    display: inline-block; /* Adjust width to fit content and center the underline */
+}
+
+/*for command text heading*/
+h4 {
+    color: #00FF00; /* White text color for subheadings */
+    margin: 5px 0; /* Minimal space above and below each subheading */
+    font-size: 18px; /* Adjust the font size if needed */
+}
+
+/*For content after heading*/
+h5{
+    color: white; /* White text color for subheadings */
+    margin: 5px 0; /* Minimal space above and below each subheading */
+    margin-left: 40px; /* Add space on the left side */
+    font-size: 16px; /* Adjust the font size if needed */
+}
+
+
+/* Content area in side containers */
+.side-container .content {
+    padding: 10px;
+    color: #00FF00;
+    flex: 1;
+    box-sizing: border-box; /* Ensure padding is included in the element’s width */
+    width: 100%; /* Ensure content area fills the container width */
+}
+
+.right-image {
+    max-width: 100%;  /* Ensures the image width does not exceed the container width */
+    max-height: 100%; /* Ensures the image height does not exceed the container height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block; /* Removes any extra space below the image */
+     /* Adjust the top margin to your desired value */
+    border: 2px solid #00FF00; /* Optional: Add a green border to match the theme */
+    border-radius: 5px; /* Optional: Add rounded corners to the image */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's width and height */
+}
+
+
+
+/* Advanced terminal styles */
+.terminal {
+    width: 50%;
+    height: 70%;
+    background-color: #1e1e1e; /* Darker background for a more realistic look */
+    color: #00FF00; /* Neon green text */
+    border: 2px solid #00FF00; /* Neon green border */
+    border-radius: 5px; /* Rounded corners for a more polished look */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-top: 50px; /* Space from the top */
+    padding: 10px; /* Padding inside the terminal */
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+}
+
+/* Terminal header styles */
+.terminal-header {
+    background-color: #333; /* Darker header background */
+    color: #00FF00; /* Neon green text */
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: #00FF00; /* Neon green button color */
+}
+
+.terminal-btn.close {
+    background-color: #ff5f56;
+}
+
+.terminal-btn.minimize {
+    background-color: #ffbd2e;
+}
+
+.terminal-btn.maximize {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    font-size: 14px;
+}
+
+/* Terminal body styles */
+.terminal-body {
+    padding: 10px;
+    color: #00FF00; /* Neon green text */
+    background-color: #1e1e1e; /* Dark background */
+    overflow-y: auto;
+    flex-grow: 1;
+    box-sizing: border-box;
+    font-size: 14px; /* Font size for terminal text */
+    line-height: 1.4; /* Better line spacing */
+    border-top: 1px solid #00FF00; /* Separator line between header and body */
+}
+
+/* Terminal input field styles */
+.terminal-input {
+    background-color: #1e1e1e; /* Match background color */
+    color: #00FF00; /* Neon green text */
+    border: none; /* Remove border */
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+    font-size: 14px; /* Match terminal text size */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    outline: none; /* Remove default outline */
+}
+
+/* Footer styles with height 40px */
+footer {
+    padding: 5px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+    border-top: 2px solid #00FF00;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #00FF00;
+}
+
+/* Modern scrollbar styles for terminal */
+.terminal-body::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #1e1e1e; /* Dark background for the scrollbar track */
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #00FF00; /* Neon green color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #00CC00; /* Slightly darker green when hovered */
+}
